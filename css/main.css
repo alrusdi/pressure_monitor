@@ -1,0 +1,31 @@
+.pressure-record {
+    display: inline-block;
+    width: 100px;
+    border: 1px solid gray;
+    margin-right: 10px;
+}
+
+.pressure-record-time {
+    text-align: center;
+    border-bottom: 1px solid #666;
+    font-weight: bold;
+}
+
+.pressure-record-value-top, .pressure-record-value-bottom {
+    display: inline-block;
+    width: 45px;
+    text-align: center;
+}
+
+.pressure-record-value-danger {
+    color: red;
+}
+
+.pressure-day {
+    font-weight: bold;
+    vertical-align: middle !important;
+}
+
+.pressure-day-danger {
+    background: #ffcece;
+}
