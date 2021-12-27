@@ -12,10 +12,6 @@ const updateMeasurementValue = (el, maxValue) => {
 const redrawTable = () => {
   var targetTopValue = parseInt(jQuery("#input-max-top-pressure").val());
   var targetBottomValue = parseInt(jQuery("#input-max-bottom-pressure").val());
-  console.log({
-      targetTopValue,
-      targetBottomValue
-  });
   jQuery(".pressure-measurement").each(function () {
       var dayHasDangerValues = false;
       jQuery(this).find(".pressure-record-values").each(function (item) {
@@ -35,7 +31,6 @@ const redrawTable = () => {
 };
 
 jQuery(() => {
-   console.log("Here");
    redrawTable();
    jQuery("#filter-form").on("change", "#input-max-top-pressure,#input-max-bottom-pressure", redrawTable);
 });
