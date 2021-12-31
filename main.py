@@ -15,6 +15,18 @@ def send_css(path):
     return send_from_directory('css', path)
 
 
+@app.route('/assets/<path:path>')
+def send_assets(path):
+    return send_from_directory('assets', path)
+
+
+@app.route("/admin/tips", methods=["GET", "POST"])  # Таблица давления
+def admin():
+    return render_template(
+        "admin/tips.html",
+    )
+
+
 @app.route("/pressure", methods=["GET", "POST"])  # Таблица давления
 def pressure():
     # Создание Вывод таблицы давления

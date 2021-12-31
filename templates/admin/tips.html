@@ -1,0 +1,59 @@
+{% extends "admin/base.html" %}
+
+{% block content %}
+<div class="row">
+    <div class="col-xl-9 mx-auto">
+        <h6 class="mb-0 text-uppercase">Tips</h6>
+        <hr/>
+        <div class="card">
+            <div class="card-body">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Текст</th>
+                            <th scope="col">Платная</th>
+                            <th scope="col">Смайлик</th>
+                            <th scope="col">Активная</th>
+                            <th scope="col">Действия</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tips-records">
+                        <tr>
+                            <td colspan="6" class="tips-loading-row">Данные загружаются...</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="row g-3">
+                    <div class="col-12 tips-actions">
+                        <button id="add-tip-button" class="btn btn-primary" type="submit" data-bs-toggle="modal" data-bs-target="#editTipModal">Add tip</button>
+
+                        <div class="modal fade" id="editTipModal" tabindex="-1" aria-labelledby="editTipModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="editTipModalLabel">Add tip</h5>
+                                        <button id="tips-modal-close" type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        {% include "admin/tips_components/edit_tip_form.html" %}
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+                                        <button type="button" class="btn btn-primary" id="tips-edit-save-button">Сохранить</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block page_script %}
+<script src="/js/tips.js"></script>
+{% endblock %}
